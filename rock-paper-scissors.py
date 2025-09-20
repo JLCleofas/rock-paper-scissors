@@ -5,8 +5,13 @@ class Game:
         self.rounds = 0
     
     def start(self):
-        print('--- Rock Paper Scissors Game ---')
-        self.rounds = int(input('How many rounds would you like to play? '))
+        while True:
+            try:
+                print('--- Rock Paper Scissors Game ---')
+                self.rounds = int(input('How many rounds would you like to play? '))
+                break
+            except ValueError:
+                print('Please enter a number.')
     
     def play(self):
         for _ in range(self.rounds):
